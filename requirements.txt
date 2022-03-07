@@ -5,6 +5,7 @@ Django==4.0.3
 django-heroku==0.3.1
 djangorestframework==3.13.1
 dyNET38==2.1
+gunicorn==20.1.0
 nagisa==0.2.7
 numpy==1.22.2
 psycopg2==2.9.3
