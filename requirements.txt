@@ -13,6 +13,7 @@ djangorestframework==3.13.1
 dyNET38==2.1
 gunicorn==20.1.0
 idna==3.3
+ja-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/ja_core_news_sm-3.2.0/ja_core_news_sm-3.2.0-py3-none-any.whl
 Jinja2==3.0.3
 langcodes==3.3.0
 MarkupSafe==2.1.0
@@ -33,6 +34,8 @@ spacy-legacy==3.0.9
 spacy-loggers==1.0.1
 sqlparse==0.4.2
 srsly==2.4.2
+SudachiDict-core==20211220
+SudachiPy==0.6.3
 thinc==8.0.13
 tqdm==4.63.0
 typer==0.4.0

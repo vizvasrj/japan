@@ -6,11 +6,7 @@ from django.contrib.auth.models import User
 from .serializers import NagisaSerializer
 from rest_framework.exceptions import APIException
 import spacy
-try:
-    nlp = spacy.load("ja_core_news_md")
-except OSError:
-    spacy.cli.download('ja_core_news_md')
-    nlp =  spacy.load('ja_core_news_md')
+nlp = spacy.load("ja_core_news_md")
 import time
 
 
