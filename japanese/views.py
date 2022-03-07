@@ -5,7 +5,12 @@ from rest_framework import status
 from django.contrib.auth.models import User
 from .serializers import NagisaSerializer
 from rest_framework.exceptions import APIException
-import nagisa
+import spacy
+try:
+    nlp = spacy.load("ja_core_news_lg")
+except OSError:
+    spacy.cli.download('ja_core_news_lg')
+    nlp =  spacy.load('ja_core_news_lg')
 import time
 
 
@@ -25,7 +30,9 @@ class NagisaView(generics.RetrieveUpdateDestroyAPIView):
         text = request.data['text']
         print(text)
         start_time = time.time()
-        k2 = [y + " " if y.isascii() else y for y in nagisa.tagging(text).words]
+        # k2 = [y + " " if y.isascii() else y for y in nagisa.tagging(text).words]
+        doc = nlp(text)                
+        k2 = [x.text for x in doc]
         endtime = time.time() - start_time
         data = {'words': k2, 'time': endtime}
         raise Success(data)
